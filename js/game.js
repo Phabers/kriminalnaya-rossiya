@@ -568,6 +568,7 @@ function dailyIncome() {
 }
 
 function forbesRank(w) {
+  if (state.flags.victory) return 52;
   return 1 + FORBES.filter(f => f[2] * 1e9 > w).length;
 }
 
