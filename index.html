@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Криминальная Россия — Путь Сильвестра</title>
+<meta name="description" content="Криминальная Россия: Путь Сильвестра — браузерная криминальная стратегия о сибиряке, который бежал из Иркутска в Москву и решил стать хозяином города.">
+<meta name="theme-color" content="#0a0a0c">
+<meta property="og:title" content="Криминальная Россия — Путь Сильвестра">
+<meta property="og:description" content="Из Иркутска в Москву. От рынка в Люблино до 52-го места в Forbes. Браузерная криминальная сага.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23d92b2b'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-size='30' font-weight='bold' fill='%230a0a0c' text-anchor='middle'%3E%D0%9A%D0%A0%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">КР</div>
+      <div class="brand-text">
+        <h1>Криминальная Россия</h1>
+        <p>Путь Сильвестра</p>
+      </div>
+    </div>
+    <div class="hud" id="hud" aria-live="polite"></div>
+  </header>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+
+  <main class="layout">
+    <aside class="col col-left">
+      <section class="card portrait-card">
+        <div class="portrait" id="portrait" aria-hidden="true">
+          <svg viewBox="0 0 300 340" role="img" aria-label="Портрет Сильвестра">
+            <defs>
+              <radialGradient id="glow" cx="50%" cy="36%" r="62%">
+                <stop offset="0%" stop-color="#8c1717" stop-opacity=".95"/>
+                <stop offset="55%" stop-color="#3d0d0d" stop-opacity=".45"/>
+                <stop offset="100%" stop-color="#0a0a0c" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="coat" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#2c2c35"/>
+                <stop offset="55%" stop-color="#1a1a20"/>
+                <stop offset="100%" stop-color="#0e0e12"/>
+              </linearGradient>
+              <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c9a07f"/>
+                <stop offset="100%" stop-color="#7e5c46"/>
+              </linearGradient>
+              <linearGradient id="rim" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#ff3b3b" stop-opacity="0"/>
+                <stop offset="100%" stop-color="#ff4646" stop-opacity=".9"/>
+              </linearGradient>
+              <linearGradient id="goldline" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#8d6b2a"/>
+                <stop offset="50%" stop-color="#e3bb63"/>
+                <stop offset="100%" stop-color="#8d6b2a"/>
+              </linearGradient>
+            </defs>
+            <rect width="300" height="340" fill="#0d0d10"/>
+            <rect width="300" height="340" fill="url(#glow)"/>
+            <g opacity=".14" stroke="#e3bb63" stroke-width="1">
+              <path d="M0 34h300M0 62h300M0 90h300M0 118h300M0 146h300M0 174h300M0 202h300M0 230h300M0 258h300M0 286h300M0 314h300"/>
+            </g>
+            <circle cx="150" cy="150" r="96" fill="none" stroke="#d92b2b" stroke-opacity=".22" stroke-width="1"/>
+            <circle cx="150" cy="150" r="112" fill="none" stroke="#d92b2b" stroke-opacity=".08" stroke-width="1"/>
+
+            <!-- shoulders / coat -->
+            <path d="M34 340c5-74 52-112 116-112s111 38 116 112Z" fill="url(#coat)"/>
+            <path d="M34 340c5-74 52-112 116-112" fill="none" stroke="#3a3a45" stroke-width="2" opacity=".5"/>
+            <!-- neck -->
+            <path d="M127 204h46v36c0 13-46 13-46 0Z" fill="#6f513d"/>
+            <!-- head -->
+            <ellipse cx="150" cy="156" rx="52" ry="64" fill="url(#skin)"/>
+            <!-- ears -->
+            <ellipse cx="99" cy="160" rx="8" ry="13" fill="#8f6a51"/>
+            <ellipse cx="201" cy="160" rx="8" ry="13" fill="#8f6a51"/>
+            <!-- hair -->
+            <path d="M97 154c-8-52 28-82 55-82 30 0 63 26 53 84-5-27-20-38-31-44-18 11-46 8-60 22-7 7-11 13-17 20Z" fill="#17130f"/>
+            <path d="M105 118c14-22 34-30 55-30" fill="none" stroke="#2b241c" stroke-width="4" opacity=".6"/>
+            <!-- brows -->
+            <path d="M114 143c8-5 18-5 26-1" fill="none" stroke="#3d2c20" stroke-width="6" stroke-linecap="round"/>
+            <path d="M160 142c8-4 18-4 26 1" fill="none" stroke="#3d2c20" stroke-width="6" stroke-linecap="round"/>
+            <!-- eyes -->
+            <path d="M116 157c7-4 14-4 21 0" fill="none" stroke="#2a2019" stroke-width="4" stroke-linecap="round"/>
+            <path d="M163 157c7-4 14-4 21 0" fill="none" stroke="#2a2019" stroke-width="4" stroke-linecap="round"/>
+            <!-- nose -->
+            <path d="M150 158v20l-7 6" fill="none" stroke="#5e4433" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- mouth -->
+            <path d="M133 194c11-4 23-4 34 0" fill="none" stroke="#4a3326" stroke-width="4" stroke-linecap="round"/>
+            <!-- stubble -->
+            <g fill="#3a2a20" opacity=".55">
+              <circle cx="126" cy="184" r="1.4"/><circle cx="134" cy="189" r="1.3"/><circle cx="142" cy="192" r="1.2"/>
+              <circle cx="158" cy="192" r="1.2"/><circle cx="166" cy="189" r="1.3"/><circle cx="174" cy="184" r="1.4"/>
+              <circle cx="130" cy="177" r="1.1"/><circle cx="170" cy="177" r="1.1"/>
+            </g>
+            <!-- coat lapels -->
+            <path d="M150 242 121 340h-24l26-92Z" fill="#101014"/>
+            <path d="M150 242l29 98h24l-26-92Z" fill="#101014"/>
+            <path d="M150 242l-8 98h16Z" fill="#08080a"/>
+            <!-- shirt collar -->
+            <path d="M132 240l18 14 18-14-6-10h-24Z" fill="#1c1c22"/>
+            <!-- chain -->
+            <path d="M123 256c16 22 38 22 54 0" fill="none" stroke="url(#goldline)" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M150 277v10" stroke="url(#goldline)" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="150" cy="291" r="4" fill="#e3bb63"/>
+            <!-- red rim light -->
+            <path d="M199 112c15 32 11 68-8 92" fill="none" stroke="url(#rim)" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+            <path d="M61 340c4-48 28-82 62-98" fill="none" stroke="#ff3b3b" stroke-width="2" opacity=".18"/>
+            <!-- vignette -->
+            <rect width="300" height="340" fill="none"/>
+          </svg>
+          <div class="portrait-scan"></div>
+          <div class="portrait-tag">№ 052</div>
+        </div>
+        <div class="portrait-meta">
+          <div class="p-name">Сильвестр</div>
+          <div class="p-origin">Иркутск → Москва</div>
+          <div class="rank-badge" id="rankBadge">Понаехавший</div>
+        </div>
+        <div class="bars" id="vitals"></div>
+        <div class="quick-actions">
+          <button class="btn ghost sm" data-act="bribe">Адвокат <span class="muted" id="bribeCost"></span></button>
+          <button class="btn ghost sm" data-act="doctor">Врач</button>
+        </div>
+      </section>
+
+      <section class="card goal-card" id="goalCard"></section>
+    </aside>
+
+    <section class="col col-main">
+      <nav class="tabs" id="tabs" aria-label="Разделы"></nav>
+      <div class="panel" id="panel"></div>
+    </section>
+
+    <aside class="col col-right">
+      <section class="card feed-card">
+        <div class="card-head">
+          <h2>Хроника</h2>
+          <span class="live"><i></i>LIVE</span>
+        </div>
+        <div class="feed" id="feed" aria-live="polite"></div>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="bottombar">
+    <button class="btn primary big" id="nextDay" data-act="nextDay">Следующий день <span class="arrow">→</span></button>
+    <button class="btn ghost" data-act="nextWeek">Неделя ⏩</button>
+    <div class="save-state" id="saveState">Автосохранение</div>
+    <button class="btn ghost sm" data-act="help">Как играть</button>
+    <button class="btn ghost sm danger-text" data-act="reset">Начать заново</button>
+  </footer>
+</div>
+
+<!-- ===== INTRO ===== -->
+<div class="overlay intro" id="intro">
+  <div class="intro-bg" aria-hidden="true">
+    <div class="intro-sun"></div>
+    <div class="intro-lines"></div>
+  </div>
+  <div class="intro-inner">
+    <div class="intro-kicker">Иркутск · за три дня до карантина</div>
+    <h2 class="intro-title">Последний<br>поезд</h2>
+    <div class="intro-copy">
+      <p>Сильвестр двадцать шесть лет прожил на Партизанской. Работал на рынке, тянул мать, мечтал открыть свою автомойку. Потом пришла чума.</p>
+      <p>В городе закрыли рынки, вокзал оцепили. На последний поезд до Москвы пускали по справке. Справку Сильвестр купил за всё, что было в кармане.</p>
+      <p>Он обещал матери вернуться, когда всё закончится. Через сутки въезд в Иркутск закрыли.</p>
+    </div>
+    <div class="intro-actions">
+      <button class="btn primary big" data-act="start">Сесть на поезд <span class="arrow">→</span></button>
+      <span class="intro-note">В кармане — $300. В Москве его никто не ждёт.</span>
+    </div>
+    <div class="intro-foot">18+ · Игровой вымысел. Все персонажи, организации и события выдуманы.</div>
+  </div>
+</div>
+
+<!-- ===== MODAL ===== -->
+<div class="overlay hidden" id="modal">
+  <div class="modal-box" id="modalBox" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="js/game.js"></script>
+</body>
+</html>
